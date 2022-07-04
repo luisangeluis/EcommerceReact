@@ -8,22 +8,21 @@ import ProtectedRoutes from './components/ProtectedRoutes';
 import Purchases from './components/Purchases';
 
 function App() {
-
-  const products = useSelector(state => state.products);
+  const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getProducts());
-  }, [])
+  }, []);
 
   return (
     <div className="App">
       <Routes>
-        <Route path="/login" element={<h2>Ruta login</h2>} />
+        <Route path="/login" element={<Lo gin />} />
         <Route element={<MainLayout />}>
           <Route path="/" element={<h2>raiz</h2>} />
           <Route path="/products/:id" element={<h2>Product con id</h2>} />
-          <Route element={<ProtectedRoutes isLogged={false}/>}>
+          <Route element={<ProtectedRoutes isLogged={false} />}>
             <Route path="/purchases" element={<Purchases />} />
           </Route>
         </Route>
