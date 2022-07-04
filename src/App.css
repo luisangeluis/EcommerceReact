@@ -21,14 +21,14 @@ body {
 /***********Login************/
 /****************************/
 .login {
-  min-height: inherit;
+  /* min-height: inherit; */
 }
 .login > .row {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: inherit;
+  min-height: inherit; */
 }
 /*******End**Login************/
 /****************************/

@@ -14,7 +14,9 @@ const MainLayout = () => {
     <>
       <header>soy header</header>
       <main>
-        <Outlet />
+        <div className="container">
+          <Outlet />
+        </div>
       </main>
       <footer>soy footer</footer>
     </>
