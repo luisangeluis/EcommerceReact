@@ -1,17 +1,24 @@
-import React from 'react';
-import {Outlet} from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Outlet } from 'react-router-dom';
+//Redux
+import { useSelector, useDispatch } from 'react-redux';
+import { getProducts } from '../store/slices/products.slice';
 
 const MainLayout = () => {
-    return (
-        <>
-            <header>soy header</header>
-            <main>
-                <Outlet />
-            </main>
-            <footer>soy footer</footer>
-        </>
+  const dispatch = useDispatch();
 
-    )
-}
+  useEffect(() => {
+    dispatch(getProducts());
+  }, []);
+  return (
+    <>
+      <header>soy header</header>
+      <main>
+        <Outlet />
+      </main>
+      <footer>soy footer</footer>
+    </>
+  );
+};
 
-export default MainLayout
+export default MainLayout;
