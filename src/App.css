@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+body {
+  min-height: 100vh;
+}
+#root {
+  min-height: inherit;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: inherit;
+}
+/***********Login************/
+/****************************/
+.login {
+  min-height: inherit;
+}
+.login > .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: inherit;
+}
+/*******End**Login************/
+/****************************/
+
+/*TO DO DARLE FLEX GROW AL MAIN*/

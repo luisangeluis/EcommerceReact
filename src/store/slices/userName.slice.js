@@ -13,12 +13,14 @@ export const userNameSlice = createSlice({
 
 export const { setUserName } = userNameSlice.actions;
 
-export const loginUser = () => (dispatch) => {
+export const loginUser = (data) => (dispatch) => {
   return axios
-    .post('https://ecommerce-api-react.herokuapp.com/api/v1/users/login', {
-      email: 'mason@gmail.com',
-      password: 'mason1234',
-    })
+    .post(
+      'https://ecommerce-api-react.herokuapp.com/api/v1/users/login',
+      //{ email: 'mason@gmail.com',
+      // password: 'mason1234',}
+      data
+    )
     .then((res) => {
       console.log(res.data.data);
       dispatch(setUserName(res.data.data));
