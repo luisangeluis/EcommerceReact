@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 //Redux
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../../store/slices/userName.slice';
 //Hook form
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
 const Login = () => {
   const userName = useSelector((state) => state.userName);
@@ -14,20 +13,16 @@ const Login = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // dispatch(loginUser());
-  }, []);
-
-  const getLogin = (data) => {
-    console.log(data);
-    dispatch(loginUser(data));
-
-    // navigate('/');
-
     if (userName != null) {
       navigate('/');
     } else {
       navigate('/login');
     }
+  }, [userName]);
+
+  const getLogin = (data) => {
+    console.log(data);
+    dispatch(loginUser(data));
   };
 
   return (

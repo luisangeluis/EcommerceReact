@@ -3,7 +3,7 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import ProtectedRoutes from './components/ProtectedRoutes';
 import MainLayout from './components/MainLayout';
-import Purchases from './components/Purchases';
+import Purchases from './components/purchases/Purchases';
 import Login from './components/login/Login';
 //redux
 import { useSelector } from 'react-redux';
