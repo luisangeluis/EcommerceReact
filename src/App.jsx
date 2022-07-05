@@ -5,7 +5,7 @@ import ProtectedRoutes from './components/ProtectedRoutes';
 import MainLayout from './components/MainLayout';
 import Purchases from './components/purchases/Purchases';
 import Login from './components/login/Login';
-import Home from './components/Home';
+import Home from './components/home/Home';
 
 function App() {
   return (
