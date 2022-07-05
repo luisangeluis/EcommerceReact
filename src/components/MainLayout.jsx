@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 //Redux
 import { useSelector, useDispatch } from 'react-redux';
 import { getProducts } from '../store/slices/products.slice';
+import Header from './shared/Header';
 
 const MainLayout = () => {
   const dispatch = useDispatch();
@@ -12,7 +13,8 @@ const MainLayout = () => {
   }, []);
   return (
     <>
-      <header>soy header</header>
+      {/* <header>soy header</header> */}
+      <Header />
       <main>
         <div className="container">
           <Outlet />
