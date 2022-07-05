@@ -9,8 +9,6 @@ import Login from './components/login/Login';
 import { useSelector } from 'react-redux';
 
 function App() {
-  const userName = useSelector((state) => state.userName);
-
   return (
     <div className="App">
       <Routes>
@@ -18,9 +16,7 @@ function App() {
           <Route path="/" element={<h2>raiz</h2>} />
           <Route path="/login" element={<Login />} />
           <Route path="/products/:id" element={<h2>Product con id</h2>} />
-          <Route
-            element={<ProtectedRoutes isLogged={userName ? true : false} />}
-          >
+          <Route element={<ProtectedRoutes />}>
             <Route path="/purchases" element={<Purchases />} />
             <Route path="/cart" element={<h2>Cart</h2>} />
           </Route>
