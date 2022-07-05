@@ -6,7 +6,7 @@ const MainLayout = () => {
   return (
     <>
       <Header />
-      <main className="flex-grow-1">
+      <main className="flex-grow-1 d-flex flex-column justify-content-center align-items-center">
         <div className="container my-3 my-md-4">
           <Outlet />
         </div>
