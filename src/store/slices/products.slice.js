@@ -17,8 +17,8 @@ export const getProducts = () => (dispatch) => {
   return axios
     .get('https://ecommerce-api-react.herokuapp.com/api/v1/products')
     .then((res) => {
-      console.log(res.data);
-      dispatch(setProducts(res.data));
+      console.log(res.data.data);
+      dispatch(setProducts(res.data.data));
     })
     .catch((error) => console.log(error));
 };

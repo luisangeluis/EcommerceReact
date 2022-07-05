@@ -5,15 +5,14 @@ import ProtectedRoutes from './components/ProtectedRoutes';
 import MainLayout from './components/MainLayout';
 import Purchases from './components/purchases/Purchases';
 import Login from './components/login/Login';
-//redux
-import { useSelector } from 'react-redux';
+import Home from './components/Home';
 
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route element={<MainLayout />}>
-          <Route path="/" element={<h2>raiz</h2>} />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/products/:id" element={<h2>Product con id</h2>} />
           <Route element={<ProtectedRoutes />}>
