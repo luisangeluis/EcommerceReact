@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import ProductsList from './products/ProductsList';
 //Redux
-import {useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { getProducts } from '../store/slices/products.slice';
 
 const Home = () => {
@@ -13,8 +13,8 @@ const Home = () => {
 
   return (
     <div className="row">
-      <div className="col-md-4"></div>
-      <div className="col-md-8">
+      <div className="col-md-3"></div>
+      <div className="col-md-9">
         <ProductsList />
       </div>
     </div>

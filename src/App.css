@@ -12,6 +12,10 @@ body {
 #root {
   min-height: inherit;
 }
+button {
+  list-style: none;
+  border-style: none;
+}
 .App {
   display: flex;
   flex-direction: column;
@@ -33,4 +37,20 @@ body {
 /*******End**Login************/
 /****************************/
 
-/*TO DO DARLE FLEX GROW AL MAIN*/
+/***********Products**list************/
+/*********************************/
+.products-list_card {
+  height: 300px;
+}
+.products-list_card img {
+  height: 100px;
+  max-width: 75%;
+}
+.products-list_card .btn {
+  padding: 0;
+}
+.products-list_card hr {
+  background-color: gray;
+}
+/***********End Products**list************/
+/*********************************/

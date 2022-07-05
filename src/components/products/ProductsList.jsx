@@ -12,10 +12,10 @@ const ProductsList = () => {
     }
   }, [products]);
 
-  console.log(productsToShow);
+  // console.log(productsToShow);
 
   return (
-    <section className="row">
+    <section className="row products-list">
       {productsToShow &&
         productsToShow.map((product) => (
           <CardProduct product={product} key={product.id} />
