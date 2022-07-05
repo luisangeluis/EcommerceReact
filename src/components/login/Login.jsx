@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import LoginForm from './LoginForm';
+import LoginUser from './LoginUser';
 
 const Login = () => {
   useEffect(() => {}, []);
@@ -7,7 +8,11 @@ const Login = () => {
   return (
     <section className="login row justify-content-center">
       <div className="col-12 col-md-6">
-        <LoginForm />
+        {localStorage.getItem('name') && localStorage.getItem('token') ? (
+          <LoginUser />
+        ) : (
+          <LoginForm />
+        )}
       </div>
     </section>
   );

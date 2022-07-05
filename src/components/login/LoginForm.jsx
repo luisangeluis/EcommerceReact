@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
   const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
 
   const getLogin = (data) => {
     console.log(data);
@@ -20,6 +21,7 @@ const LoginForm = () => {
       .then((res) => {
         let user = res.data.data;
         setLoginLocalStorage(user);
+        navigate('/');
       })
       .catch((error) => console.log(error));
   };
@@ -27,8 +29,11 @@ const LoginForm = () => {
   const setLoginLocalStorage = (data) => {
     let token = data.token;
     let name = `${data.user.firstName} ${data.user.lastName}`;
-    localStorage.setItem('name', token);
-    localStorage.setItem('token', name);
+
+    localStorage.clear();
+
+    localStorage.setItem('name', name);
+    localStorage.setItem('token', token);
   };
 
   return (
