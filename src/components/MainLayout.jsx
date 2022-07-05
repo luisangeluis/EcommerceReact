@@ -13,7 +13,6 @@ const MainLayout = () => {
   }, []);
   return (
     <>
-      {/* <header>soy header</header> */}
       <Header />
       <main>
         <div className="container">
