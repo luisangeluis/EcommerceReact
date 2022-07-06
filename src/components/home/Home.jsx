@@ -4,6 +4,7 @@ import ProductsList from '../products/ProductsList';
 import { useDispatch } from 'react-redux';
 import { getProducts } from '../../store/slices/products.slice';
 import SearchByName from './SearchByName';
+import Filters from './Filters';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,9 @@ const Home = () => {
 
   return (
     <div className="row">
-      <div className="col-md-3"></div>
+      <div className="col-md-3">
+        <Filters />
+      </div>
       <div className="col-md-9">
         <SearchByName />
         <ProductsList />
