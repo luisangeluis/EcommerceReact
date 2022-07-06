@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { getProducts } from '../../store/slices/products.slice';
+
 import CardProduct from './CardProduct';
 
 const ProductsList = () => {
