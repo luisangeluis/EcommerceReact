@@ -10,6 +10,7 @@ const SideBar = () => {
       data-bs-scroll="true"
       data-bs-backdrop="true"
       aria-labelledby="offcanvasWithBothOptionsLabel"
+      // style={{ visibility: true }}
     >
       <div className="offcanvas-header">
         <h5 id="offcanvasRightLabel">Offcanvas right</h5>

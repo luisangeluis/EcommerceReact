@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { NavLink } from 'react-router-dom';
+import SideBar from './Sidebar';
 const Header = () => {
+  const [isLogged, setIsLogged] = useState(false);
+
+  const token = localStorage.getItem('token');
+  useEffect(() => {
+    if (token) {
+      console.log('is loged');
+      setIsLogged(true);
+    } else {
+      console.log('no is loged');
+
+      setIsLogged(false);
+    }
+  }, [localStorage.getItem('token')]);
+
   return (
     <header>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -36,13 +51,12 @@ const Header = () => {
                 {/* <button className="btn nav-link">Cart</button> */}
                 <button
                   className="btn nav-link"
-                  // type="button"
-                  data-bs-toggle="offcanvas"
+                  data-bs-toggle={isLogged ? 'offcanvas' : ''}
                   data-bs-target="#offcanvasRight"
                   aria-controls="offcanvasRight"
                   aria-controls="offcanvasWithBackdrop"
                 >
-                  Toggle right offcanvas
+                  Cart
                 </button>
               </li>
             </ul>

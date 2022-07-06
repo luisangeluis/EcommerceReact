@@ -4,6 +4,10 @@ import Header from './shared/Header';
 import SideBar from './shared/Sidebar';
 
 const MainLayout = () => {
+  const showCart = () => {
+    if (localStorage.getItem('token')) {
+    }
+  };
   return (
     <>
       <Header />
