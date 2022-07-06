@@ -6,6 +6,7 @@ import MainLayout from './components/MainLayout';
 import Purchases from './components/purchases/Purchases';
 import Login from './components/login/Login';
 import Home from './components/home/Home';
+import ProductDetail from './components/products/ProductDetail';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/products/:id" element={<h2>Product con id</h2>} />
+          <Route path="/products/:id" element={<ProductDetail />} />
           <Route element={<ProtectedRoutes />}>
             <Route path="/purchases" element={<Purchases />} />
             {/* <Route path="/cart" element={<h2>Cart</h2>} /> */}
