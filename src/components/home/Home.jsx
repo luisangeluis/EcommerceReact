@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { getProducts } from '../../store/slices/products.slice';
 import SearchByName from './SearchByName';
 import Filters from './Filters';
+import SideBar from '../shared/Sidebar';
 
 const Home = () => {
   const dispatch = useDispatch();

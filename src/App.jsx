@@ -17,7 +17,7 @@ function App() {
           <Route path="/products/:id" element={<h2>Product con id</h2>} />
           <Route element={<ProtectedRoutes />}>
             <Route path="/purchases" element={<Purchases />} />
-            <Route path="/cart" element={<h2>Cart</h2>} />
+            {/* <Route path="/cart" element={<h2>Cart</h2>} /> */}
           </Route>
         </Route>
       </Routes>

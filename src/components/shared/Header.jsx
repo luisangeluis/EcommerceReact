@@ -33,9 +33,17 @@ const Header = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/cart">
-                  Cart
-                </NavLink>
+                {/* <button className="btn nav-link">Cart</button> */}
+                <button
+                  className="btn nav-link"
+                  // type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasRight"
+                  aria-controls="offcanvasRight"
+                  aria-controls="offcanvasWithBackdrop"
+                >
+                  Toggle right offcanvas
+                </button>
               </li>
             </ul>
           </div>
