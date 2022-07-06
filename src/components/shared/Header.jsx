@@ -7,7 +7,7 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <NavLink className="navbar-brand" to="/">
-            Navbar
+            E-commerce
           </NavLink>
           <button
             className="navbar-toggler"

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getProducts } from '../../store/slices/products.slice';
+import { useSelector } from 'react-redux';
 
 import CardProduct from './CardProduct';
 
@@ -9,8 +8,10 @@ const ProductsList = () => {
   const [productsToShow, setProductsToShow] = useState();
 
   useEffect(() => {
+    console.log('cambio products');
     if (products) {
-      setProductsToShow(products.products);
+      // setProductsToShow(products.products);
+      setProductsToShow(products);
     }
   }, [products]);
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchByPrice from './SearcByPrice';
 import SearchByCategory from './SearchByCategory';
 
 const Filters = () => {
@@ -24,7 +25,9 @@ const Filters = () => {
               className="accordion-collapse collapse show"
               aria-labelledby="panelsStayOpen-headingOne"
             >
-              <div className="accordion-body"></div>
+              <div className="accordion-body">
+                <SearchByPrice />
+              </div>
             </div>
           </div>
           <div className="accordion-item">
