@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CardProduct = ({ product }) => {
-  console.log(product);
+  // console.log(product);
   return (
     <div className="col-md-6 col-lg-4 my-2 my-md-3">
       <div className="card products-list_card d-flex justify-content-center align-items-center flex-column py-2 py-md-3">

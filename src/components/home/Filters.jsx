@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchByCategory from './SearchByCategory';
 
 const Filters = () => {
   return (
@@ -23,7 +24,7 @@ const Filters = () => {
               className="accordion-collapse collapse show"
               aria-labelledby="panelsStayOpen-headingOne"
             >
-              <div class="accordion-body"></div>
+              <div className="accordion-body"></div>
             </div>
           </div>
           <div className="accordion-item">
@@ -44,7 +45,9 @@ const Filters = () => {
               className="accordion-collapse collapse"
               aria-labelledby="panelsStayOpen-headingTwo"
             >
-              <div class="accordion-body"></div>
+              <div className="accordion-body">
+                <SearchByCategory />
+              </div>
             </div>
           </div>
         </div>
