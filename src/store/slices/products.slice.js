@@ -29,7 +29,7 @@ export const getProductsByName = (name) => (dispatch) => {
       `https://ecommerce-api-react.herokuapp.com/api/v1/products?query=${name}`
     )
     .then((res) => {
-      console.log(res.data.data);
+      console.log(res.data.data.products);
       dispatch(setProducts(res.data.data.products));
     })
     .catch((error) => console.log(error));
@@ -41,8 +41,8 @@ export const getProductsByCategory = (categoryId) => (dispatch) => {
       `https://ecommerce-api-react.herokuapp.com/api/v1/products?category=${categoryId}`
     )
     .then((res) => {
-      console.log(res);
-      dispatch(setProducts(res.data.data));
+      // console.log(res.data.data.products);
+      dispatch(setProducts(res.data.data.products));
     })
     .catch((error) => console.log(error));
 };
@@ -50,19 +50,19 @@ export const getProductsByCategory = (categoryId) => (dispatch) => {
 export const getProductsByPrice =
   (minPrice = 0, maxPrice = 500000) =>
   (dispatch) => {
-    console.log(minPrice);
-    console.log(maxPrice);
+    // console.log(minPrice);
+    // console.log(maxPrice);
     return axios
       .get('https://ecommerce-api-react.herokuapp.com/api/v1/products')
       .then((res) => {
         // console.log(res.data.data.products);
         let allProducts = res.data.data.products;
-        console.log(allProducts);
+        // console.log(allProducts);
         let productsByPrice = allProducts.filter((product) => {
           let price = Number(product.price);
           return price >= minPrice && price <= maxPrice;
         });
-        console.log(productsByPrice);
+        // console.log(productsByPrice);
         dispatch(setProducts(productsByPrice));
       })
       .catch((error) => console.log(error));
