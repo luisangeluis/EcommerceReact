@@ -45,7 +45,7 @@ const Filters = () => {
             </h2>
             <div
               id="panelsStayOpen-collapseTwo"
-              className="accordion-collapse collapse"
+              className="accordion-collapse"
               aria-labelledby="panelsStayOpen-headingTwo"
             >
               <div className="accordion-body">
