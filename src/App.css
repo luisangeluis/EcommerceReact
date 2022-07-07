@@ -8,6 +8,7 @@ html {
 }
 body {
   min-height: 100vh;
+  overflow-x: hidden;
 }
 #root {
   min-height: inherit;
@@ -33,6 +34,14 @@ p {
   justify-content: space-between;
   min-height: inherit;
 }
+
+.bg-orange {
+  background-color: #f85555;
+}
+
+.color-orange {
+  color: #f85555;
+}
 /***********Login************/
 /****************************/
 .login {
@@ -51,17 +60,24 @@ p {
 /***********Products**list************/
 /*********************************/
 .products-list_card {
-  height: 300px;
+  /* height: 320px; */
+  height: 100%;
 }
 .products-list_card img {
-  height: 100px;
-  max-width: 75%;
+  height: 150px;
+  max-width: 100%;
 }
 .products-list_card .btn {
   padding: 0;
 }
 .products-list_card hr {
   background-color: gray;
+}
+
+.btn-add-cart {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
 }
 /***********End Products**list************/
 /*********************************/
