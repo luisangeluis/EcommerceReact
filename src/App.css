@@ -74,8 +74,16 @@ p {
 /*********************************/
 .sidebar {
   position: absolute;
-  right: 0;
+  right: -500px;
   bottom: 0;
-  max-width: min(100%, 300px);
+  top: 3.5rem;
+  z-index: 2;
+  width: min(80%, 350px);
   height: 100%;
+  border: 1px solid whitesmoke;
+  transition: right ease-out 1.2s;
+}
+.open-side {
+  transition: right ease-out 1.2s;
+  right: 0;
 }

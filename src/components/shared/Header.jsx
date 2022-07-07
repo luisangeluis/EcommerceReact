@@ -5,7 +5,6 @@ import SideBarr from './SideBarr';
 const Header = () => {
   const [showCart, setShowCart] = useState(false);
   const navigate = useNavigate();
-
   let isLogged = false;
 
   if (localStorage.getItem('token')) {
@@ -14,15 +13,25 @@ const Header = () => {
     isLogged = false;
   }
 
+  useEffect(() => {
+    if (!localStorage.getItem('token')) {
+      setShowCart(false);
+    }
+  }, [localStorage.getItem('token')]);
+
   const getSideBar = () => {
-    isLogged ? setShowCart(!showCart) : navigate('/login');
-    // isLogged ? console.log('loguead') : console.log('no logueado');
+    if (isLogged) {
+      setShowCart(!showCart);
+    } else {
+      setShowCart(false);
+      navigate('/login');
+    }
   };
 
   console.log(isLogged);
 
   return (
-    <header>
+    <header className="">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <NavLink className="navbar-brand" to="/">
