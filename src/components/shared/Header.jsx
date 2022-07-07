@@ -1,21 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import SideBarr from './SideBarr';
 
-import { NavLink } from 'react-router-dom';
-import SideBar from './Sidebar';
 const Header = () => {
-  const [isLogged, setIsLogged] = useState(false);
+  const [showCart, setShowCart] = useState(false);
+  const navigate = useNavigate();
 
-  const token = localStorage.getItem('token');
-  useEffect(() => {
-    if (token) {
-      console.log('is loged');
-      setIsLogged(true);
-    } else {
-      console.log('no is loged');
+  let isLogged = false;
 
-      setIsLogged(false);
-    }
-  }, [localStorage.getItem('token')]);
+  if (localStorage.getItem('token')) {
+    isLogged = true;
+  } else {
+    isLogged = false;
+  }
+
+  const getSideBar = () => {
+    isLogged ? setShowCart(!showCart) : navigate('/login');
+    // isLogged ? console.log('loguead') : console.log('no logueado');
+  };
+
+  console.log(isLogged);
 
   return (
     <header>
@@ -49,13 +53,7 @@ const Header = () => {
               </li>
               <li className="nav-item">
                 {/* <button className="btn nav-link">Cart</button> */}
-                <button
-                  className="btn nav-link"
-                  data-bs-toggle={isLogged ? 'offcanvas' : ''}
-                  data-bs-target="#offcanvasRight"
-                  aria-controls="offcanvasRight"
-                  aria-controls="offcanvasWithBackdrop"
-                >
+                <button className="btn nav-link" onClick={getSideBar}>
                   Cart
                 </button>
               </li>
@@ -63,6 +61,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
+      <SideBarr showCart={showCart} />
     </header>
   );
 };

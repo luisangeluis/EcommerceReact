@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from './shared/Header';
-import SideBar from './shared/Sidebar';
+import SideBarr from './shared/SideBarr';
 
 const MainLayout = () => {
   const showCart = () => {
@@ -11,8 +11,7 @@ const MainLayout = () => {
   return (
     <>
       <Header />
-      <SideBar />
-      <main className="flex-grow-1 d-flex flex-column justify-content-center align-items-center">
+      <main className="flex-grow-1 d-flex flex-column justify-content-center align-items-center position-relative">
         <div className="container my-3 my-md-4 flex-grow-1 d-flex flex-column">
           <Outlet />
         </div>

@@ -66,6 +66,16 @@ p {
 /***********End Products**list************/
 /*********************************/
 
-.offcanvas-end {
-  /* top: 3.55rem; */
+/* .offcanvas-end {
+  /* top: 3.55rem; 
+} */
+
+/***********Side**Bar**************/
+/*********************************/
+.sidebar {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  max-width: min(100%, 300px);
+  height: 100%;
 }

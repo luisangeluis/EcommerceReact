@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import ProductsList from '../products/ProductsList';
 //Redux
 import { useDispatch } from 'react-redux';
@@ -6,9 +6,11 @@ import { getProducts } from '../../store/slices/products.slice';
 import SearchByName from './SearchByName';
 import Filters from './Filters';
 import SideBar from '../shared/Sidebar';
+import SideBarr from '../shared/SideBarr';
 
 const Home = () => {
   const dispatch = useDispatch();
+  // const sidebar = useRef();
 
   useEffect(() => {
     dispatch(getProducts());
