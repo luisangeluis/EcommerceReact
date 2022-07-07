@@ -98,6 +98,7 @@ p {
   height: 100%;
   border: 1px solid whitesmoke;
   transition: right ease-out 1.2s;
+  background-color: black;
 }
 .open-side {
   transition: right ease-out 1.2s;
@@ -126,3 +127,14 @@ p {
 }
 /***********End Carousel**************/
 /*********************************/
+
+/***********Details counter**************/
+/*********************************/
+.details-counter button {
+  width: 50px;
+  height: 30px;
+}
+.details-counter p {
+  width: 50px;
+  height: 30px;
+}
