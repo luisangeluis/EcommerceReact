@@ -24,7 +24,9 @@ const SearchByName = () => {
               aria-describedby="emailHelp"
               {...register('name', { required: true })}
             />
-            <button className="btn btn-secondary">Serch</button>
+            <button className="btn btn-secondary bg-orange border-0">
+              Serch
+            </button>
           </div>
         </form>
       </div>

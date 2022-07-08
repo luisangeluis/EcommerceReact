@@ -57,12 +57,26 @@ p {
 /*******End**Login************/
 /****************************/
 
+/***********filters***********/
+/*****************************/
+
+/***********Endfilters***********/
+/*******************************/
 /***********Products**list************/
 /*********************************/
 .products-list_card {
-  /* height: 320px; */
   height: 100%;
+  box-shadow: 2px 3px 3px whitesmoke;
+  transition: scale 1.5s ease-in;
 }
+
+.products-list_card:hover {
+  box-shadow: 2px 3px 1px whitesmoke;
+  -webkit-transform: scale(1.01);
+  transform: scale(1.01);
+  transition: scale 1.5s ease-in;
+}
+
 .products-list_card img {
   height: 150px;
   max-width: 100%;
