@@ -12,7 +12,7 @@ const MainLayout = () => {
     <>
       <Header />
       <main className="flex-grow-1 d-flex flex-column justify-content-center align-items-center position-relative">
-        <div className="container my-3 my-md-4 flex-grow-1 d-flex flex-column">
+        <div className="container py-3 py-md-4 flex-grow-1 d-flex flex-column">
           <Outlet />
         </div>
       </main>
