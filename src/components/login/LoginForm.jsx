@@ -55,7 +55,7 @@ const LoginForm = () => {
           Password
         </label>
         <input
-          type="text"
+          type="password"
           className="form-control"
           id="password"
           aria-describedby="password"

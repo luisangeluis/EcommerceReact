@@ -1,5 +1,7 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import getConfigPurchases from '../../utils/getConfigPurchases';
 
 const CardProduct = ({ product }) => {
   const navigate = useNavigate();
@@ -12,6 +14,19 @@ const CardProduct = ({ product }) => {
   const goToDetail = (e) => {
     navigate(`/products/${e}`);
   };
+
+  const addToCart = (id) => {
+    const product = {
+      id:id,
+      quantity: 1
+    }
+    console.log(product);
+    axios.post('https://ecommerce-api-react.herokuapp.com/api/v1/cart',product,getConfigPurchases())
+      .then(res=>{
+        console.log(res);
+      })
+      .catch(error=>console.log(error));
+  }
 
   // console.log(product);
   return (
@@ -35,9 +50,9 @@ const CardProduct = ({ product }) => {
                 <p className="card-text m-0">${currentProduct?.price}</p>
               </div>
               <div>
-                <i className="btn btn-add-cart rounded-circle bg-orange">
+                <a onClick={() => addToCart(product?.id)} className="btn btn-add-cart rounded-circle bg-orange d-flex justify-content-center align-items-center">
                   <i className="fa-solid fa-cart-shopping text-white"></i>
-                </i>
+                </a>
               </div>
             </div>
           </div>

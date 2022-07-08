@@ -1,12 +1,17 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import getConfigPurchases from '../../utils/getConfigPurchases';
 import SimilarItems from './SimilarItems';
 
 const ProductDetail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState();
   const [counter, setCounter] = useState(1);
+
+  useEffect(() => {
+    if (id) getProduct();
+  }, [id]);
 
   const plusOne = () => {
     setCounter(counter + 1);
@@ -20,10 +25,6 @@ const ProductDetail = () => {
     }
   };
 
-  useEffect(() => {
-    if (id) getProduct();
-  }, [id]);
-
   const getProduct = () => {
     axios
       .get(`https://ecommerce-api-react.herokuapp.com/api/v1/products/${id}`)
@@ -33,6 +34,17 @@ const ProductDetail = () => {
       })
       .catch((error) => console.log(error));
   };
+
+  const addProductToCart=()=>{
+    const product={
+      id:id,
+      quantity:counter
+    }
+
+    axios.post('https://ecommerce-api-react.herokuapp.com/api/v1/cart',product,getConfigPurchases())
+      .then(res=>console.log(res))
+      .catch(error=>console.log(error));
+  }
 
   console.log(counter);
 
@@ -137,7 +149,7 @@ const ProductDetail = () => {
                         </div>
                       </div>
                     </div>
-                    <button className="d-block mx-auto p-2 p-md-3 w-100">
+                    <button onClick={addProductToCart} className="d-block mx-auto p-2 p-md-3 w-100 btn bg-orange">
                       Add to car
                       <i className="fa-solid fa-cart-shopping  px-1 px-md-2"></i>
                     </button>

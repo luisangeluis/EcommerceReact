@@ -7,8 +7,39 @@ import Purchases from './components/purchases/Purchases';
 import Login from './components/login/Login';
 import Home from './components/home/Home';
 import ProductDetail from './components/products/ProductDetail';
+import { useEffect } from 'react';
+//Redux
+import { useDispatch } from 'react-redux';
+import { getProducts } from './store/slices/products.slice';
 
 function App() {
+
+  // useEffect(() => {
+  //   createUser()
+  // }, [])
+  
+  // const createUser = () => {
+  //   const user = {
+  //     firstName: "luis",
+  //     lastName: "zepeda",
+  //     email: "luisangeluis@gmail.com",
+  //     password: "pass12345",
+  //     phone: "1234567891",
+  //     role: "admin"
+  //   }
+  //   axios.post('https://ecommerce-api-react.herokuapp.com/api/v1/users',user)
+  //     .then(res => {
+  //       console.log(res);
+  //     })
+  //     .catch(error => console.log(error));
+  // }
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProducts());
+  }, []);
+
   return (
     <div className="App">
       <Routes>

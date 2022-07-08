@@ -81,11 +81,6 @@ p {
 }
 /***********End Products**list************/
 /*********************************/
-
-/* .offcanvas-end {
-  /* top: 3.55rem; 
-} */
-
 /***********Side**Bar**************/
 /*********************************/
 .sidebar {
@@ -98,7 +93,8 @@ p {
   height: 100%;
   border: 1px solid whitesmoke;
   transition: right ease-out 1.2s;
-  background-color: black;
+  background-color: whitesmoke;
+  box-shadow: 5px 10px 20px #888888;
 }
 .open-side {
   transition: right ease-out 1.2s;
@@ -122,12 +118,10 @@ p {
   height: 10px;
   width: 20px;
   background-color: #f85555;
-
   box-shadow: none;
 }
 /***********End Carousel**************/
 /*********************************/
-
 /***********Details counter**************/
 /*********************************/
 .details-counter button {
