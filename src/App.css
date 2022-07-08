@@ -88,7 +88,7 @@ p {
   right: -500px;
   bottom: 0;
   top: 3.5rem;
-  z-index: 2;
+  z-index: 3;
   width: min(80%, 350px);
   min-height: 95%;
   /* height: 90vh; */

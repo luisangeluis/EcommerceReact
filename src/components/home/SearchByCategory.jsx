@@ -18,7 +18,7 @@ const SearchByCategory = () => {
         'https://ecommerce-api-react.herokuapp.com/api/v1/products/categories'
       )
       .then((res) => {
-        console.log(res.data.data.categories);
+        // console.log(res.data.data.categories);
         setCategories(res.data.data.categories);
       })
       .catch((error) => console.log(error));

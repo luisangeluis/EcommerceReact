@@ -8,7 +8,7 @@ const ProductsList = () => {
   const [productsToShow, setProductsToShow] = useState();
 
   useEffect(() => {
-    console.log('cambio products');
+    // console.log('cambio products');
     if (products) {
       // setProductsToShow(products.products);
       setProductsToShow(products);

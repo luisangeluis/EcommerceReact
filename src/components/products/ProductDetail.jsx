@@ -138,7 +138,7 @@ const ProductDetail = () => {
                     <div className="info-details d-flex justify-content-around">
                       <div className="">
                         <p>Price</p>
-                        <p>{product?.price}</p>
+                        <p>${product?.price}</p>
                       </div>
                       <div className="text-center p-2 p-md-3">
                         <p>Quantity</p>
@@ -175,11 +175,6 @@ const ProductDetail = () => {
           </div>
         </div>
         <SimilarItems product={product} />
-        <div className="row my-3 my-md-4">
-          <div className="col-12">
-            <p>hola</p>
-          </div>
-        </div>
       </div>
     </section>
   );

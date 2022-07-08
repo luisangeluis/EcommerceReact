@@ -27,9 +27,7 @@ const Header = () => {
       navigate('/login');
     }
   };
-
   // console.log(isLogged);
-
   return (
     <header className="">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -70,7 +68,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
-      <SideBarr showCart={showCart} />
+      <SideBarr showCart={showCart} setShowCart={setShowCart} />
     </header>
   );
 };

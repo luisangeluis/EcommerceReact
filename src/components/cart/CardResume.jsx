@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CardResume = ({ product }) => {
-  console.log(product);
+  // console.log(product);
 
   return (
     <div className="card my-2 my-md-3 p-2 p-md-3">

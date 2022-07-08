@@ -7,12 +7,17 @@ export const cartSlice = createSlice({
   initialState: null,
   reducers: {
     setCart: (state, action) => {
+      console.log(state);
+      console.log(action.payload);
       return action.payload;
+    },
+    resetCart: (state) => {
+      return (state = null);
     },
   },
 });
 
-export const { setCart } = cartSlice.actions;
+export const { setCart, resetCart } = cartSlice.actions;
 export default cartSlice.reducer;
 
 export const getCart = () => (dispatch) => {
