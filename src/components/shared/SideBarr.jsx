@@ -45,13 +45,16 @@ const SideBarr = ({ showCart, setShowCart }) => {
             <i className="fa-solid fa-circle-xmark"></i>
           </b>
         </button>
-        <h2>Shopping cart</h2>
-        <div className="row ">
-          {cart &&
-            cart.map((product) => (
-              <CardResume product={product} key={product.id} />
-            ))}
+        <div className="flex-grow-1">
+          <h2>Shopping cart</h2>
+          <div className="row">
+            {cart &&
+              cart.map((product) => (
+                <CardResume product={product} key={product.id} />
+              ))}
+          </div>
         </div>
+
         <div className="row w-100">
           <div className="col-12">
             <button className="btn bg-orange w-100" onClick={makePurchase}>

@@ -7,8 +7,6 @@ export const cartSlice = createSlice({
   initialState: null,
   reducers: {
     setCart: (state, action) => {
-      console.log(state);
-      console.log(action.payload);
       return action.payload;
     },
     resetCart: (state) => {

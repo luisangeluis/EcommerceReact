@@ -11,13 +11,13 @@ import { useEffect } from 'react';
 //Redux
 import { useDispatch } from 'react-redux';
 import { getProducts } from './store/slices/products.slice';
+import { getCart } from './store/slices/cart.slice';
 
 function App() {
-
   // useEffect(() => {
   //   createUser()
   // }, [])
-  
+
   // const createUser = () => {
   //   const user = {
   //     firstName: "luis",
@@ -38,6 +38,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getProducts());
+    dispatch(getCart());
   }, []);
 
   return (

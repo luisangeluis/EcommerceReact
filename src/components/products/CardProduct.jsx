@@ -33,9 +33,10 @@ const CardProduct = ({ product }) => {
       )
       .then((res) => {
         console.log(res.data);
-        dispatch(getCart());
+        // dispatch(getCart());
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error))
+      .finally(() => dispatch(getCart()));
   };
 
   // console.log(product);

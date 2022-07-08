@@ -1,7 +1,19 @@
+import axios from 'axios';
 import React from 'react';
+import getConfigPurchases from '../../utils/getConfigPurchases';
 
 const CardResume = ({ product }) => {
-  // console.log(product);
+  console.log(product);
+
+  const removeToCart = () => {
+    axios
+      .delete(
+        `https://ecommerce-api-react.herokuapp.com/api/v1/cart/${product.id}`,
+        getConfigPurchases()
+      )
+      .then((res) => console.log(res))
+      .catch((error) => console.log(error));
+  };
 
   return (
     <div className="card my-2 my-md-3 p-2 p-md-3">
@@ -14,7 +26,9 @@ const CardResume = ({ product }) => {
               {product.productsInCart.quantity}
             </p>
           </div>
-          <i className="fa-solid fa-trash-can color-orange"></i>
+          <button onClick={removeToCart} className="btn">
+            <i className="fa-solid fa-trash-can color-orange"></i>
+          </button>
         </div>
         <p className="text-end">
           Total{' '}

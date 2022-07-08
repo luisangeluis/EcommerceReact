@@ -52,10 +52,11 @@ const ProductDetail = () => {
         getConfigPurchases()
       )
       .then((res) => {
-        console.log(res.data);
-        dispatch(getCart(res.data));
+        // console.log(res.data);
+        // dispatch(getCart(res.data));
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error))
+      .finally(() => dispatch(getCart()));
   };
 
   // console.log(counter);
