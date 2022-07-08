@@ -3,9 +3,13 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import getConfigPurchases from '../../utils/getConfigPurchases';
 import SimilarItems from './SimilarItems';
+//Redux
+import { getCart } from '../../store/slices/cart.slice';
+import { useDispatch } from 'react-redux';
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const dispatch = useDispatch();
   const [product, setProduct] = useState();
   const [counter, setCounter] = useState(1);
 
@@ -29,24 +33,32 @@ const ProductDetail = () => {
     axios
       .get(`https://ecommerce-api-react.herokuapp.com/api/v1/products/${id}`)
       .then((res) => {
-        console.log(res.data.data.product);
+        // console.log(res.data.data.product);
         setProduct(res.data.data.product);
       })
       .catch((error) => console.log(error));
   };
 
-  const addProductToCart=()=>{
-    const product={
-      id:id,
-      quantity:counter
-    }
+  const addProductToCart = () => {
+    const product = {
+      id: id,
+      quantity: counter,
+    };
 
-    axios.post('https://ecommerce-api-react.herokuapp.com/api/v1/cart',product,getConfigPurchases())
-      .then(res=>console.log(res))
-      .catch(error=>console.log(error));
-  }
+    axios
+      .post(
+        'https://ecommerce-api-react.herokuapp.com/api/v1/cart',
+        product,
+        getConfigPurchases()
+      )
+      .then((res) => {
+        console.log(res.data);
+        dispatch(getCart(res.data));
+      })
+      .catch((error) => console.log(error));
+  };
 
-  console.log(counter);
+  // console.log(counter);
 
   return (
     <section className="row flex-grow-1 product-detail">
@@ -149,7 +161,10 @@ const ProductDetail = () => {
                         </div>
                       </div>
                     </div>
-                    <button onClick={addProductToCart} className="d-block mx-auto p-2 p-md-3 w-100 btn bg-orange">
+                    <button
+                      onClick={addProductToCart}
+                      className="d-block mx-auto p-2 p-md-3 w-100 btn bg-orange"
+                    >
                       Add to car
                       <i className="fa-solid fa-cart-shopping  px-1 px-md-2"></i>
                     </button>

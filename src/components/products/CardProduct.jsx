@@ -2,10 +2,14 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import getConfigPurchases from '../../utils/getConfigPurchases';
+//Redux
+import { useDispatch } from 'react-redux';
+import { getCart } from '../../store/slices/cart.slice';
 
 const CardProduct = ({ product }) => {
   const navigate = useNavigate();
   const [currentProduct, setCurrentProduct] = useState();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setCurrentProduct(product);
@@ -17,16 +21,22 @@ const CardProduct = ({ product }) => {
 
   const addToCart = (id) => {
     const product = {
-      id:id,
-      quantity: 1
-    }
+      id: id,
+      quantity: 1,
+    };
     console.log(product);
-    axios.post('https://ecommerce-api-react.herokuapp.com/api/v1/cart',product,getConfigPurchases())
-      .then(res=>{
-        console.log(res);
+    axios
+      .post(
+        'https://ecommerce-api-react.herokuapp.com/api/v1/cart',
+        product,
+        getConfigPurchases()
+      )
+      .then((res) => {
+        console.log(res.data);
+        dispatch(getCart());
       })
-      .catch(error=>console.log(error));
-  }
+      .catch((error) => console.log(error));
+  };
 
   // console.log(product);
   return (
@@ -50,7 +60,10 @@ const CardProduct = ({ product }) => {
                 <p className="card-text m-0">${currentProduct?.price}</p>
               </div>
               <div>
-                <a onClick={() => addToCart(product?.id)} className="btn btn-add-cart rounded-circle bg-orange d-flex justify-content-center align-items-center">
+                <a
+                  onClick={() => addToCart(product?.id)}
+                  className="btn btn-add-cart rounded-circle bg-orange d-flex justify-content-center align-items-center"
+                >
                   <i className="fa-solid fa-cart-shopping text-white"></i>
                 </a>
               </div>

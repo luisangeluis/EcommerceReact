@@ -84,21 +84,35 @@ p {
 /***********Side**Bar**************/
 /*********************************/
 .sidebar {
-  position: absolute;
+  position: fixed;
   right: -500px;
   bottom: 0;
   top: 3.5rem;
   z-index: 2;
   width: min(80%, 350px);
-  height: 100%;
+  min-height: 95%;
+  /* height: 90vh; */
   border: 1px solid whitesmoke;
   transition: right ease-out 1.2s;
   background-color: whitesmoke;
   box-shadow: 5px 10px 20px #888888;
+  overflow: auto;
+}
+.sidebar .container {
+  min-height: 100%;
+  overflow: auto;
 }
 .open-side {
   transition: right ease-out 1.2s;
   right: 0;
+}
+
+.sidebar .fa-circle-xmark {
+  font-size: 1.5rem;
+}
+.card-resume_quantity {
+  width: 25px;
+  height: 25px;
 }
 /***********Carousel**************/
 /*********************************/

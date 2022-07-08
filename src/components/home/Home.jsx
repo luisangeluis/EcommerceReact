@@ -1,10 +1,8 @@
-import React, { useEffect, useRef } from 'react';
 import ProductsList from '../products/ProductsList';
 import SearchByName from './SearchByName';
 import Filters from './Filters';
 
 const Home = () => {
-  
   return (
     <div className="row">
       <div className="col-md-3 my-2 my-md-3">

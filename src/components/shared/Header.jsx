@@ -28,7 +28,7 @@ const Header = () => {
     }
   };
 
-  console.log(isLogged);
+  // console.log(isLogged);
 
   return (
     <header className="">
