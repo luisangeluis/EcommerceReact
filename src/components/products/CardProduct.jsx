@@ -43,7 +43,7 @@ const CardProduct = ({ product }) => {
   return (
     <div className="col-md-6 col-lg-4 my-2 my-md-3">
       <div className="card products-list_card d-flex justify-content-center align-items-center flex-column py-2 py-md-3">
-        <button
+        <section
           className="btn h-100 w-100 d-flex flex-column"
           onClick={() => goToDetail(currentProduct.id)}
         >
@@ -61,16 +61,16 @@ const CardProduct = ({ product }) => {
                 <p className="card-text m-0">${currentProduct?.price}</p>
               </div>
               <div>
-                <a
+                <button
                   onClick={() => addToCart(product?.id)}
                   className="btn btn-add-cart rounded-circle bg-orange d-flex justify-content-center align-items-center"
                 >
                   <i className="fa-solid fa-cart-shopping text-white"></i>
-                </a>
+                </button>
               </div>
             </div>
           </div>
-        </button>
+        </section>
       </div>
     </div>
   );
