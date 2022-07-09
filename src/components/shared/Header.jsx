@@ -30,7 +30,7 @@ const Header = () => {
   // console.log(isLogged);
   return (
     <header className="">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
           <NavLink className="navbar-brand" to="/">
             E-commerce

@@ -1,8 +1,11 @@
 import axios from 'axios';
 import React from 'react';
 import getConfigPurchases from '../../utils/getConfigPurchases';
+import {useDispatch} from 'react-redux';
+import { getCart } from '../../store/slices/cart.slice';
 
 const CardResume = ({ product }) => {
+  const dispatch =useDispatch();
   console.log(product);
 
   const removeToCart = () => {
@@ -11,8 +14,12 @@ const CardResume = ({ product }) => {
         `https://ecommerce-api-react.herokuapp.com/api/v1/cart/${product.id}`,
         getConfigPurchases()
       )
-      .then((res) => console.log(res))
-      .catch((error) => console.log(error));
+      .then((res) => {
+        console.log(res)
+        
+      })
+      .catch((error) => console.log(error))
+      .finally(()=>dispatch(getCart()));
   };
 
   return (

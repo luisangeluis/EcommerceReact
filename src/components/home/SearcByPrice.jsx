@@ -38,7 +38,7 @@ const SearchByPrice = () => {
               {...register('to', { required: true })}
             />
           </div>
-          <button className="btn btn-dark">Filter price</button>
+          <button className="btn bg-orange text-white">Filter price</button>
         </form>
       </div>
     </div>

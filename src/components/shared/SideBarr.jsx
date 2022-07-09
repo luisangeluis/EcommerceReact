@@ -11,6 +11,17 @@ const SideBarr = ({ showCart, setShowCart }) => {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
+  console.log(cart);
+
+  let total;
+
+  if (cart) {
+    total = cart.reduce((acum, current) => {
+      return acum + (current.price * current.productsInCart.quantity)
+    })
+  }
+
+
   const closeCart = () => {
     setShowCart(false);
   };
@@ -54,10 +65,10 @@ const SideBarr = ({ showCart, setShowCart }) => {
               ))}
           </div>
         </div>
-
+        <h3>Total: ${total}</h3>
         <div className="row w-100">
           <div className="col-12">
-            <button className="btn bg-orange w-100" onClick={makePurchase}>
+            <button className="btn bg-orange w-100 text-white" onClick={makePurchase}>
               Checkout
             </button>
           </div>

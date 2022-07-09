@@ -29,7 +29,7 @@ const SearchByCategory = () => {
   };
 
   return (
-    <div className="card">
+    <div className="card card-category">
       <div className="card-body d-flex flex-column bg-light">
         {categories &&
           categories.map((category) => (

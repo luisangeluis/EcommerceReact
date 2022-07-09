@@ -24,6 +24,10 @@ button {
   list-style: none;
   border-style: none;
 }
+button:hover{
+  opacity: .95;
+}
+
 p {
   margin: 0;
 }
@@ -36,7 +40,7 @@ p {
 }
 
 .bg-orange {
-  background-color: #f85555;
+  background-color: #1b6078;
 }
 
 .color-orange {
@@ -57,6 +61,35 @@ p {
 /*******End**Login************/
 /****************************/
 
+.card-category button:hover{
+  opacity: .9;
+  color: #1b6078;
+}
+.accordion-button{
+  background-color: #1b6078!important;
+  color: white!important;
+  border-style: none !important;
+  border: none!important;
+  
+
+
+}
+.accordion-button::before,.accordion-button::after{
+  color: red;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+}
+.accordion-button:focus{
+  
+  border-style: none;
+  color: white;
+  border: none;
+  box-shadow: none;
+}
+
+
 /***********filters***********/
 /*****************************/
 
@@ -66,12 +99,13 @@ p {
 /*********************************/
 .products-list_card {
   height: 100%;
-  box-shadow: 2px 3px 3px whitesmoke;
+  box-shadow: 2px 3px 1px whitesmoke;
+
   transition: scale 1.5s ease-in;
 }
 
 .products-list_card:hover {
-  box-shadow: 2px 3px 1px whitesmoke;
+  box-shadow: 2px 3px 3px whitesmoke;
   -webkit-transform: scale(1.01);
   transform: scale(1.01);
   transition: scale 1.5s ease-in;
