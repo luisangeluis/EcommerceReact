@@ -15,20 +15,23 @@ const CardProduct = ({ product }) => {
     setCurrentProduct(product);
   }, [product]);
 
-  const goToDetail = (e) => {
-    navigate(`/products/${e}`);
+  const goToDetail = () => {
+    let id=currentProduct.id
+    navigate(`/products/${id}`);
   };
 
-  const addToCart = (id) => {
-    const product = {
-      id: id,
+  const addToCart = (e) => {
+    e.stopPropagation()
+
+    const p = {
+      id: product.id,
       quantity: 1,
     };
     console.log(product);
     axios
       .post(
         'https://ecommerce-api-react.herokuapp.com/api/v1/cart',
-        product,
+        p,
         getConfigPurchases()
       )
       .then((res) => {
@@ -45,7 +48,7 @@ const CardProduct = ({ product }) => {
       <div className="card products-list_card d-flex justify-content-center align-items-center flex-column py-2 py-md-3">
         <section
           className="btn h-100 w-100 d-flex flex-column"
-          onClick={() => goToDetail(currentProduct.id)}
+          onClick={goToDetail}
         >
           <img
             src={currentProduct?.productImgs[0]}
@@ -62,7 +65,7 @@ const CardProduct = ({ product }) => {
               </div>
               <div>
                 <button
-                  onClick={() => addToCart(product?.id)}
+                  onClick={addToCart}
                   className="btn btn-add-cart rounded-circle bg-orange d-flex justify-content-center align-items-center"
                 >
                   <i className="fa-solid fa-cart-shopping text-white"></i>

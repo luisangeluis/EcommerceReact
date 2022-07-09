@@ -71,7 +71,7 @@ const SideBarr = ({ showCart, setShowCart }) => {
               ))}
           </div>
         </div>
-        <h3>{total>0 ? `Total: ${total}`:''}</h3>
+        <h3 className='align-self-end'>{total>0 ? `Total: $${total}`:''}</h3>
         <div className="row w-100">
           <div className="col-12">
             <button className="btn bg-orange w-100 text-white" onClick={makePurchase}>

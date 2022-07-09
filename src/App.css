@@ -100,15 +100,15 @@ p {
 .products-list_card {
   height: 100%;
   box-shadow: 2px 3px 1px whitesmoke;
-
   transition: scale 1.5s ease-in;
+  /* position: relative; */
 }
 
 .products-list_card:hover {
   box-shadow: 2px 3px 3px whitesmoke;
-  -webkit-transform: scale(1.01);
+  /* -webkit-transform: scale(1.01);
   transform: scale(1.01);
-  transition: scale 1.5s ease-in;
+  transition: scale 1.5s ease-in; */
 }
 
 .products-list_card img {
@@ -126,6 +126,15 @@ p {
   width: 40px;
   height: 40px;
   cursor: pointer;
+  /* position: absolute; */
+
+}
+
+.btn-add-cart:hover{
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: scale 1.5s ease-in;
+  /* z-index: 2; */
 }
 /***********End Products**list************/
 /*********************************/
