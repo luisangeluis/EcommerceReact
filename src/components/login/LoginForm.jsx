@@ -37,7 +37,8 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(getLogin)}>
+    <form onSubmit={handleSubmit(getLogin)} className="login-form border border-1 p-4 p-md-5 rounded-2">
+      <h2>Welcome! Enter your email and your password to continue.</h2>
       <div className="mb-3">
         <label htmlFor="email" className="form-label">
           Email address
@@ -62,7 +63,7 @@ const LoginForm = () => {
           {...register('password', { required: true })}
         />
       </div>
-      <button className="btn btn-danger">Log in</button>
+      <button className="btn bg-one">Log in</button>
     </form>
   );
 };

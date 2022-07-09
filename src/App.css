@@ -43,9 +43,30 @@ p {
   background-color: #1b6078;
 }
 
+.bg-one{
+  background-color: #1b6078;
+
+}
+
+.color-one{
+  color:#1b6078
+}
+
 .color-orange {
   color: #f85555;
 }
+/***********Header************/
+/****************************/
+.navbar .nav-link.active i,.navbar .nav-link.active p{
+  color: #1b6078;
+}
+.navbar-brand{
+  font-size: 2rem;
+  font-weight: bold;
+}
+/***********End Header************/
+/****************************/
+
 /***********Login************/
 /****************************/
 .login {
@@ -57,6 +78,16 @@ p {
   align-items: center;
   text-align: center;
   min-height: inherit; */
+}
+.login-form{
+  box-shadow: 3px 7px 18px #888888;
+}
+.login-form:hover{
+  box-shadow: 5px 10px 8px #888888;
+  -webkit-transform: scale(1.001);
+  transform: scale(1.005);
+  transition: scale 1.5s ease-in;
+
 }
 /*******End**Login************/
 /****************************/
@@ -99,13 +130,13 @@ p {
 /*********************************/
 .products-list_card {
   height: 100%;
-  box-shadow: 2px 3px 1px whitesmoke;
+  box-shadow: 2px 3px 2px whitesmoke;
   transition: scale 1.5s ease-in;
   /* position: relative; */
 }
 
 .products-list_card:hover {
-  box-shadow: 2px 3px 3px whitesmoke;
+  box-shadow: 2px 3px 1px whitesmoke;
   /* -webkit-transform: scale(1.01);
   transform: scale(1.01);
   transition: scale 1.5s ease-in; */
