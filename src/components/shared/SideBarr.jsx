@@ -10,17 +10,23 @@ const SideBarr = ({ showCart, setShowCart }) => {
   const sidebar = useRef();
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  const [total,setTotal] =useState(0);
+
+  useEffect(()=>{
+    let suma=0;
+    if(cart){
+      console.log('hola')
+      suma = cart.reduce((accum,current)=>{
+        return accum +(current.price*current.productsInCart.quantity);
+      },0);
+
+    }
+    console.log(suma);
+    setTotal(suma)
+
+  },[cart])
 
   console.log(cart);
-
-  let total;
-
-  if (cart) {
-    total = cart.reduce((acum, current) => {
-      return acum + (current.price * current.productsInCart.quantity)
-    })
-  }
-
 
   const closeCart = () => {
     setShowCart(false);
@@ -65,7 +71,7 @@ const SideBarr = ({ showCart, setShowCart }) => {
               ))}
           </div>
         </div>
-        <h3>Total: ${total}</h3>
+        <h3>{total>0 ? `Total: ${total}`:''}</h3>
         <div className="row w-100">
           <div className="col-12">
             <button className="btn bg-orange w-100 text-white" onClick={makePurchase}>

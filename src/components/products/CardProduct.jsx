@@ -32,7 +32,7 @@ const CardProduct = ({ product }) => {
         getConfigPurchases()
       )
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         // dispatch(getCart());
       })
       .catch((error) => console.log(error))

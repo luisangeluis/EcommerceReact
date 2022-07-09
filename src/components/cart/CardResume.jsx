@@ -6,7 +6,7 @@ import { getCart } from '../../store/slices/cart.slice';
 
 const CardResume = ({ product }) => {
   const dispatch =useDispatch();
-  console.log(product);
+  // console.log(product);
 
   const removeToCart = () => {
     axios

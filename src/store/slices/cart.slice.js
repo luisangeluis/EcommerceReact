@@ -25,7 +25,7 @@ export const getCart = () => (dispatch) => {
       getConfigPurchases()
     )
     .then((res) => {
-      console.log(res.data.data.cart.products);
+      // console.log(res.data.data.cart.products);
       dispatch(setCart(res.data.data.cart.products));
     })
     .catch((error) => console.log(error));
