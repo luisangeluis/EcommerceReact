@@ -7,7 +7,7 @@ const Login = () => {
 
   return (
     <section className="login row justify-content-center align-items-center">
-      <div className="col-12 col-md-6 col-lg-4">
+      <div className="col-12 col-md-6 col-lg-4 text-center">
         {localStorage.getItem('name') && localStorage.getItem('token') ? (
           <LoginUser />
         ) : (

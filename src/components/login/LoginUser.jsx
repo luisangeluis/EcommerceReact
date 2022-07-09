@@ -16,8 +16,8 @@ const LoginUser = () => {
 
   return (
     <div>
-      <p>Hello {localStorage.getItem('name')}</p>
-      <button onClick={LogOutUser}>Log Out</button>
+      <h3 className='py-2 py-md-3'><b>Hello! {localStorage.getItem('name')}</b></h3>
+      <button onClick={LogOutUser} className="btn bg-one">Log Out</button>
     </div>
   );
 };
