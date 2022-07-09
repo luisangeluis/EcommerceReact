@@ -3,7 +3,7 @@ import React from 'react';
 const Purchase = ({ purchase }) => {
   return (
     <div className="card my-3 my-md-4">
-      <div className="card-header">{purchase.createdAt}</div>
+      <div className="card-header">{purchase.updatedAt}</div>
       <div className="card-body">
         <ul className="d-flex  flex-column justify-content-around align-items-center">
           {purchase.cart.products?.map((product) => (
